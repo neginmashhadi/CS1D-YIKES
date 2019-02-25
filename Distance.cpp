@@ -7,19 +7,19 @@ Distance::Distance()
     nextRestaurantID    = 0;
 }
 
-Distance::Distance(double dMiles, int currentID, int nextID)
+Distance::Distance(float dMiles, int currentID, int nextID)
 {
     miles               = dMiles;
     currentRestaurantID = currentID;
     nextRestaurantID    = nextID;
 }
 
-void Distance::SetMiles(double dMiles)
+void Distance::SetMiles(float dMiles)
 {
     this->miles = dMiles;
 }
 
-double Distance::GetMiles()
+float Distance::GetMiles()
 {
     return miles;
 }
