@@ -7,11 +7,11 @@ class Distance
 public:
     Distance();
 
-    Distance(double dMiles, int currentID, int nextID);
+    Distance(float dMiles, int currentID, int nextID);
 
-    void SetMiles(double dMiles);
+    void SetMiles(float dMiles);
 
-    double GetMiles();
+    float GetMiles();
 
     void SetCurrentRestaurantID(int currentID);
 
@@ -22,7 +22,7 @@ public:
     int GetNextID();
 
 private:
-    double miles;
+    float  miles;
     int    currentRestaurantID;
     int    nextRestaurantID;
 };
