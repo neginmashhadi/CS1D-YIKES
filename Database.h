@@ -2,43 +2,33 @@
 #define DATABASE_H
 
 #include <QtSql>
-#include <QVector>
-#include <QString>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QSqlDriver>
 #include <QDebug>
+#include <QFile>
+#include <QTextStream>
+#include <vector>
+#include <string>
+
 #include "restaurant.h"
 
-class database
+using namespace std;
+
+class Database
 {
-public:
-    database();
-    
-    bool AddRestaurant(Restaurant add);
-    
-    void TestDatabase();
-    
-    QVector<QString> GetRestaurantsName();
-    
-    bool SearchForName(QString key);
-    
-    bool SearchForNumber(int key);
-    
-    void GetAllRestaurants(QVector<QString>& names, QVector<float> &distances);
-    
-    QVector<Restaurant> AllRestaurantInfo();
-    
-    Restaurant GetRestaurant(QString name);
-    
-    bool AddMenuItem(QString item, float price, QString name);
-    
-    bool DelteMenuItem(QString item, QString name);
-    
-    bool CheckMenuItem(QString name);
-    
-    bool ChangePrice(QString itemName, float newPrice);
+public:  
+    Database();
+
+    void InputFileToDatabase(const QString& path);
 
 private:
-    QSqlDatabase db;
+    QSqlDatabase rDatabase;
 
 };
+
+#endif // DATABASE_H
+
 
 #endif // DATABASE_H
