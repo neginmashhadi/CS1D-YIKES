@@ -23,8 +23,11 @@ public:
 
     void InputFileToDatabase(const QString& path);
 
+    void testDatabase();
+
 private:
     QSqlDatabase rDatabase;
+    vector<Restaurant> restaurantList;
 
 };
 
