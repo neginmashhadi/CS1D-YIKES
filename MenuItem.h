@@ -8,7 +8,7 @@ class MenuItem
 public:
     MenuItem();
 
-    MenuItem(QString itemName, int rID, double itemPrice);
+    MenuItem(QString itemName, int rID, float itemPrice);
 
     void SetItemName(QString itemName);
 
@@ -18,14 +18,14 @@ public:
 
     int GetRestaurantID();
 
-    void SetPrice(double itemPrice);
+    void SetPrice(float itemPrice);
 
-    double GetItemPrice();
+    float GetItemPrice();
 
 private:
     QString name;
     int     id;
-    double  price;
+    float   price;
 
 
 };
