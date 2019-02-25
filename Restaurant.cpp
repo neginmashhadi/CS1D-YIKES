@@ -70,12 +70,12 @@ int Restaurant::GetTotalDistance()
     return totalDistance;
 }
 
-void Restaurant::SetTotalAmountSpent(double amount)
+void Restaurant::SetTotalAmountSpent(float amount)
 {
     this->totalSpent = amount;
 }
 
-double Restaurant::GetTotalAmountSpent()
+float Restaurant::GetTotalAmountSpent()
 {
     return totalSpent;
 }
