@@ -36,9 +36,9 @@ public:
 
     int GetTotalDistance();
 
-    void SetTotalAmountSpent(double amount);
+    void SetTotalAmountSpent(float amount);
 
-    double GetTotalAmountSpent();
+    float GetTotalAmountSpent();
 
     void SetVisitedLocation(bool rVisitedLocation);
 
@@ -53,14 +53,14 @@ public:
     vector<MenuItem> GetMenuItemsOfRestaurant();
 
 private:
-    QString name;
-    int     id;
-    double  saddlebackDistance;
-    int     size;
-    int     totalDistance;
+    QString  name;
+    int      id;
+    double    saddlebackDistance;
+    int      size;
+    int      totalDistance;
 
-    double  totalSpent;
-    bool    visitedLocation;
+    float    totalSpent;
+    bool     visitedLocation;
 
     vector<Distance> distanceList;
     vector<MenuItem> menuItemList;
