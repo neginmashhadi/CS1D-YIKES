@@ -7,7 +7,7 @@ MenuItem::MenuItem()
     price = 0;
 }
 
-MenuItem::MenuItem(QString itemName, int rID, double itemPrice)
+MenuItem::MenuItem(QString itemName, int rID, float itemPrice)
 {
     name  = itemName;
     id    = rID;
@@ -34,12 +34,12 @@ int MenuItem::GetRestaurantID()
     return id;
 }
 
-void MenuItem::SetPrice(double itemPrice)
+void MenuItem::SetPrice(float itemPrice)
 {
     this->price = itemPrice;
 }
 
-double MenuItem::GetItemPrice()
+float MenuItem::GetItemPrice()
 {
     return price;
 }
