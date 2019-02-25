@@ -18,9 +18,16 @@ Database::Database()
 
 void Database::InputFileToDatabase(const QString& path)
 {
-    QFile inFile(path);
     QString restaurantName;
     QString ID;
+    QString destination;
+    QString distanceInMiles;
+    QString saddlebackDistance;
+    QString countOfMenuItems;
+    QString itemName;
+    QString itemPrice;
+
+    QFile inFile(path);
 
     if(!inFile.open(QFile::ReadOnly | QFile::Text))
     {
@@ -30,11 +37,31 @@ void Database::InputFileToDatabase(const QString& path)
 
     QSqlQuery query(rDatabase);
     QTextStream in(&inFile);
-    QString testQuery = "CREATE TABLE RestaurantInfo ("
-                        "NAME Qstring,"
-                        "ID integer);";
+    QString restaurantQuery = "CREATE TABLE RestaurantInfo ("
+                              "NAME QString,"
+                              "ID integer,"
+                              "SADDLEBACK DISTANCE double,"
+                              "MENU SIZE integer,"
+                              "NUMBER OF DESTINATIONS integer);";
 
-    if(query.exec(testQuery))
+    QString menuQuery = "CREATE TABLE MenuInfo ("
+                        "NAME QString,"
+                        "ID integer,"
+                        "MENU ITEM double,"
+                        "PRICE double);";
+
+    QString distanceQuery = "CREATE TABLE DistanceInfo ("
+                            "FROM QString,"
+                            "ID integer,"
+                            "DISTANCE TO double,"
+                            "ID integer);";
+
+
+
+
+
+
+    if(query.exec(restaurantQuery))
     {
         qDebug() << "Data saved to table...";
     }
@@ -73,3 +100,32 @@ void Database::InputFileToDatabase(const QString& path)
     inFile.close();
 
 }
+
+void Database::testDatabase()
+{
+    for(unsigned int i = 0; i < restaurantList.size(); i++)
+    {
+        qDebug() << restaurantList.at(i).GetName();
+        qDebug() << "Restaurant ID: " << restaurantList.at(i).GetID();
+        qDebug() << "Distances to other restaurants: " << restaurantList.at(i).GetTotalDistance();
+
+        unsigned int totalDistances = restaurantList.at(i).GetTotalDistance();
+        for(unsigned int j = 0; j < totalDistances; j++)
+        {
+            qDebug() << restaurantList.at(i).GetDistancesToRestaurants().at(j).GetNextID() << " " << restaurantList.at(i).GetDistancesToRestaurants().at(j).GetMiles();
+        }
+
+        qDebug() << "Distance from saddleback: " << restaurantList.at(i).GetSaddlebackDistance();
+
+        unsigned int menuSize = restaurantList.at(i).GetSize();
+        qDebug() << "Menu size: " << menuSize;
+        for(unsigned int k = 0; k < menuSize; k++)
+        {
+            qDebug() << restaurantList.at(i).GetMenuItemsOfRestaurant().at(k).GetRestaurantID()
+                     << " " << restaurantList.at(i).GetMenuItemsOfRestaurant().at(k).GetItemName()
+                     << " " << restaurantList.at(i).GetMenuItemsOfRestaurant().at(k).GetItemPrice();
+        }
+        qDebug() << "";
+    }
+}
+
