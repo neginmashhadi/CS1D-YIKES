@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include "mainwindow.h"
+#include "Restaurant.h"
 
 using namespace std;
 
@@ -17,8 +18,9 @@ class CustomTripMenu : public QDialog//, public MainWindow
     Q_OBJECT
 
 public:
-    explicit CustomTripMenu(QWidget *parent);
+    explicit CustomTripMenu(vector<Restaurant> restaurant, QWidget *parent);
     bool returnBack();
+    void fillCheckBoxes();
     ~CustomTripMenu();
 
 private slots:
@@ -29,7 +31,7 @@ private slots:
 private:
     Ui::CustomTripMenu *CTui;
     bool back {false};
-    vector<string> restaurants;
+    vector<Restaurant> restaurantList;
 };
 
 #endif // CUSTOMTRIPMENU_H

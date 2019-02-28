@@ -1,8 +1,8 @@
 #ifndef RESTAURANT_H
 #define RESTAURANT_H
 
-#include "menuitem.h"
-#include "distance.h"
+#include "MenuItem.h"
+#include "Distance.h"
 #include <QString>
 #include <vector>
 #include <string>
@@ -55,7 +55,7 @@ public:
 private:
     QString  name;
     int      id;
-    double    saddlebackDistance;
+    double   saddlebackDistance;
     int      size;
     int      totalDistance;
 

@@ -1,9 +1,9 @@
-#include "database.h"
+#include "Database.h"
 
 Database::Database()
 {
     rDatabase = QSqlDatabase::addDatabase("QSQLITE");
-    rDatabase.setDatabaseName("C:/Users/Jeff/Desktop/db/Restaurants.db");
+    rDatabase.setDatabaseName("Restaurants.db");
 
     if(!rDatabase.open())
     {
@@ -120,8 +120,8 @@ void Database::InputFileToDatabase(const QString& path)
 
             query.prepare("INSERT INTO DistanceInfo (FROM_ID, TO_ID, DISTANCE) "
                           "VALUES(:FROM, :TO, :DISTANCE)");
-            query.bindValue(":FROM", ID);
-            query.bindValue(":TO", destination);
+            query.bindValue(":FROM", destination);
+            query.bindValue(":TO", ID);
             query.bindValue(":DISTANCE", distanceInMiles);
 
             if(query.exec())
@@ -316,4 +316,9 @@ void Database::DeleteFromDatabase(QString name)
             break;
         }
     }
+}
+
+vector<Restaurant> Database::GetRestuarantList()
+{
+    return restaurantList;
 }

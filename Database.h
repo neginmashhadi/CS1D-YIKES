@@ -12,7 +12,7 @@
 #include <vector>
 #include <string>
 
-#include "restaurant.h"
+#include "Restaurant.h"
 
 using namespace std;
 
@@ -28,6 +28,8 @@ public:
     void testDatabase();
 
     void DeleteFromDatabase(QString name);
+
+    vector<Restaurant> GetRestuarantList();
 
 private:
     QSqlDatabase       rDatabase;

@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT       += sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Yikes
@@ -29,20 +29,34 @@ SOURCES += \
         mainwindow.cpp \
     adminlogin.cpp \
     customtripmenu.cpp \
-    foodie.cpp
+    foodie.cpp \
+    adminsettingmenu.cpp \
+    Database.cpp \
+    Distance.cpp \
+    MenuItem.cpp \
+    Restaurant.cpp
 
 HEADERS += \
         mainwindow.h \
     adminlogin.h \
     customtripmenu.h \
-    foodie.h
+    foodie.h \
+    adminsettingmenu.h \
+    Database.h \
+    Distance.h \
+    MenuItem.h \
+    Restaurant.h
 
 FORMS += \
         mainwindow.ui \
     adminlogin.ui \
-    customtripmenu.ui
+    customtripmenu.ui \
+    adminsettingmenu.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

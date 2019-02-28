@@ -7,8 +7,11 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     
-    Database myDatabase;
-    myDatabase.InputFileToDatabase(":/resources/Input.txt.txt");
+//    Database myDatabase;
+//    myDatabase.InputFileToDatabase(":/files/Input.txt");
+
+//    myDatabase.DatabaseToRestaurants();
+//    myDatabase.testDatabase();
     
     MainWindow w;
     w.show();

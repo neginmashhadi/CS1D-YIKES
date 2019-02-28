@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CustomTripMenu</class>
- <widget class="QDialog" name="CustomTripMenu">
+ <class>AdminSettingMenu</class>
+ <widget class="QDialog" name="AdminSettingMenu">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,9 +16,9 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>260</y>
-     <width>331</width>
+     <x>30</x>
+     <y>240</y>
+     <width>341</width>
      <height>32</height>
     </rect>
    </property>
@@ -33,12 +33,34 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>20</y>
-     <width>141</width>
-     <height>226</height>
+     <y>40</y>
+     <width>160</width>
+     <height>161</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout"/>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QRadioButton" name="AD_Restaurant_Button">
+      <property name="text">
+       <string>Add/Delete Restaurant</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="AD_Item_Button">
+      <property name="text">
+       <string>Add/Delete Item</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="Change_Price_Button">
+      <property name="text">
+       <string>Change Item Price</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
@@ -46,7 +68,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>CustomTripMenu</receiver>
+   <receiver>AdminSettingMenu</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -62,7 +84,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>CustomTripMenu</receiver>
+   <receiver>AdminSettingMenu</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

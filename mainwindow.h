@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "adminlogin.h"
+#include "Database.h"
 
 namespace Ui {
 class MainWindow;
@@ -30,10 +31,17 @@ private slots:
 
     void on_actionLogout_triggered();
 
+    void on_AdminSetting_button_clicked();
+
 protected:
     Ui::MainWindow *ui;
+
+    Database DB;
+
     AdminLogin *uiLogin;
     bool adminPrivW;
+    bool runningProgram;
+
 };
 
 #endif // MAINWINDOW_H
